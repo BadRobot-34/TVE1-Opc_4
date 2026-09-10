@@ -2,10 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Imagen a Pantalla Completa</title>
   <style>
-    /* Eliminamos márgenes, rellenos y barras de desplazamiento por defecto */
     * {
       margin: 0;
       padding: 0;
@@ -15,23 +14,29 @@
     html, body {
       width: 100%;
       height: 100%;
-      overflow: hidden; /* Evita el scroll si la imagen se ajusta */
-      background-color: #000; /* Fondo negro por si la imagen tarda en cargar */
+      overflow: hidden;
+      background-color: #000;
     }
 
-    /* La imagen cubre todo el viewport */
     .fullscreen-image {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover; /* Cubre todo el espacio sin deformarse (recorta los bordes sobrantes) */
-      object-position: center; /* Centra la imagen */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      /* Usamos 'contain' para ver la imagen ENTERA sin recortes al girar.
+         Si prefieres que rellene todo aunque corte bordes, cambia 'contain' por 'cover' */
+      object-fit: contain; 
+      object-position: center;
       display: block;
     }
   </style>
 </head>
 <body>
 
-  <img src="https://img.magnific.com/vector-gratis/banner-abstracto-contraccion-conexion_23-2148600068.jpg?semt=ais_hybrid&w=740&q=80" alt="Imagen a pantalla completa" class="fullscreen-image">
+  <img src="https://img.magnific.com/vector-gratis/banner-abstracto-contraccion-conexion_23-2148600068.jpg" alt="Imagen a pantalla completa" class="fullscreen-image">
 
 </body>
 </html>
